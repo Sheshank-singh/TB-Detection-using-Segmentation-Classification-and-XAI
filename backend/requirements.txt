@@ -7,3 +7,5 @@ pillow
 scikit-image
 scipy
 python-multipart
+aiofiles
+h5py
