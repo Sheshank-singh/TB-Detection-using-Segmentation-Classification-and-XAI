@@ -4,5 +4,5 @@ tensorflow
 numpy
 opencv-python
 pillow
-python-dotenv
-python-multipart
+scikit-image
+scipy
