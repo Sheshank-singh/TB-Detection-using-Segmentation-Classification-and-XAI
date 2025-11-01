@@ -1,0 +1,334 @@
+body {
+  padding: 0 20px; /* Remove top/bottom padding, keep side padding */
+  overflow-x: hidden;
+}
+
+.landing-page {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 10px;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/lung_xray_bg.jpg') no-repeat center center/cover; /* Darker overlay, placeholder for actual image */
+  color: #fff;
+  padding: 20px 8%; /* Increased padding */
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Distribute space */
+  min-height: 700px; /* Taller section */
+  text-align: left;
+}
+
+.hero-content {
+  max-width: 55%; /* Give more space to content */
+  margin-right: 50px; /* Space between content and image */
+}
+
+.hero-content h1 {
+  font-size: 4.2em; /* Larger heading */
+  margin-bottom: 25px;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.hero-content p {
+  font-size: 1.4em; /* Larger subheading */
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.hero-buttons .button {
+  margin-right: 20px;
+  padding: 15px 30px; /* Larger buttons */
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-buttons .button.primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.hero-buttons .button.primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.hero-buttons .button.secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.hero-buttons .button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.hero-visual {
+  flex-shrink: 0;
+}
+
+.hero-visual img {
+  max-width: 450px; /* Significantly larger image */
+  width: 100%;
+  height: auto;
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+}
+
+section {
+  padding: 60px 5%;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+  font-size: 2.5em;
+  color: #007bff;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.about-section ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.about-section ul li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.workflow-section {
+  background-color: #e9ecef;
+}
+
+.workflow-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  text-align: center;
+}
+
+.workflow-step {
+  flex: 1;
+  min-width: 180px;
+  max-width: 220px;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.workflow-step:hover {
+  transform: translateY(-5px);
+}
+
+.workflow-step .icon {
+  font-size: 3em;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.workflow-step h3 {
+  font-size: 1.3em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.workflow-step p {
+  font-size: 0.95em;
+  color: #666;
+}
+
+.arrow {
+  font-size: 2em;
+  color: #007bff;
+  margin: 0 10px;
+}
+
+.results-section table {
+  width: 80%;
+  margin: 0 auto 30px auto;
+  border-collapse: collapse;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.results-section th,
+.results-section td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.results-section th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.results-section tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.results-section p {
+  text-align: center;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.xai-section .xai-examples {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.xai-example {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.xai-example h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.xai-example img {
+  max-width: 200px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.datasets-section ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.datasets-section ul li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.tech-section table {
+  width: 70%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tech-section th,
+.tech-section td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.tech-section th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.tech-section tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.impact-section ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.impact-section ul li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.impact-section p {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: 30px;
+}
+
+.research-section .research-links {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.research-section .button {
+  margin: 0 10px;
+}
+
+.footer-section {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 40px 5%;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.footer-section p {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.footer-section .disclaimer {
+  font-size: 0.85em;
+  color: #bbb;
+  margin-top: 20px;
+}
+
+.social-links {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #007bff;
+}
+
+.social-link img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  /* filter: invert(1); */
+}
