@@ -10,29 +10,17 @@ import cv2
 from PIL import Image
 from skimage import measure
 from scipy.ndimage import binary_fill_holes
-from fastapi import FastAPI, File, UploadFile, Form
-from pydantic import BaseModel
+from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import uvicorn
 from tensorflow.keras.applications.efficientnet import preprocess_input
-import smtplib
-import ssl
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 
 # ------------------------------------------------------------
 # CONFIG
 # ------------------------------------------------------------
 SIGMOID_THRESHOLD = 0.5
 CLASS_NAMES = ["Normal", "TB"]
-
-# Email Configuration
-SENDER_EMAIL = os.getenv("SENDER_EMAIL", "your_email@example.com") # Replace with your sender email
-SENDER_PASSWORD = os.getenv("SENDER_PASSWORD", "your_email_password") # Replace with your sender email password or app-specific password
-RECEIVER_EMAIL = "sheshanksingh2609@gmail.com"
-SMTP_SERVER = "smtp.gmail.com"
-SMTP_PORT = 587
 
 # ------------------------------------------------------------
 # APP INIT
@@ -203,8 +191,8 @@ async def predict(image: UploadFile = File(...)):
         orig_rgb = pil_to_numpy(raw)
         h, w = orig_rgb.shape[:2]
 
-        # Save original image for debugging
-        cv2.imwrite("original_image.png", cv2.cvtColor(orig_rgb, cv2.COLOR_RGB2BGR))
+        # --------------Save original image for debugging-------------------
+        # cv2.imwrite("original_image.png", cv2.cvtColor(orig_rgb, cv2.COLOR_RGB2BGR))
 
         # --- SEGMENTATION ---
         seg_in = cv2.resize(orig_rgb, (seg_input_shape[1], seg_input_shape[0]))
@@ -218,8 +206,8 @@ async def predict(image: UploadFile = File(...)):
 
         # --- CLASSIFICATION ---
         cls_img = cv2.resize(segmented, (cls_input_shape[1], cls_input_shape[0]))
-        # Save preprocessed image for classification for debugging
-        cv2.imwrite("preprocessed_classification_image.png", cv2.cvtColor(cls_img, cv2.COLOR_RGB2BGR))
+        #---------- Save preprocessed image for classification for debugging--------
+        # cv2.imwrite("preprocessed_classification_image.png", cv2.cvtColor(cls_img, cv2.COLOR_RGB2BGR))
         cls_x = preprocess_input(cls_img.astype(np.float32))
         cls_x = np.expand_dims(cls_x, axis=0)
 
